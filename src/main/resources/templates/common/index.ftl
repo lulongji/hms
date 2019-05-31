@@ -108,3 +108,10 @@
         </div>
     </div>
 </section>
+
+
+<section class="section-cover" data-stellar-background-ratio="0.5" style="background-image: url(${basepath}/static/images/img_5.jpg);">
+    <div class="container">
+    </div>
+</section>
+<!-- END section -->

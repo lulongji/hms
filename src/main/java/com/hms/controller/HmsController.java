@@ -25,5 +25,25 @@ public class HmsController {
         return "/index";
     }
 
+    /**
+     * 房间列表
+     *
+     * @return
+     */
+    @RequestMapping("/rooms")
+    public String rooms() {
+        return "/rooms";
+    }
+
+    /**
+     * 留言信箱
+     *
+     * @return
+     */
+    @RequestMapping("/contact")
+    public String contact() {
+        return "/contact";
+    }
+
 
 }
