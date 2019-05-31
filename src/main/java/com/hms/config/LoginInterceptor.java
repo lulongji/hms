@@ -1,5 +1,7 @@
 package com.hms.config;
 
+import com.hms.common.Constants;
+import com.hms.common.util.AuthUtil;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -29,7 +31,17 @@ public class LoginInterceptor implements HandlerInterceptor {
                 httpServletRequest.getRequestURI().indexOf("/user/") != -1) {
             return true;
         }
-        return true;
+        String path = httpServletRequest.getServletPath();
+        if (!path.matches(Constants.NO_INTERCEPTOR_PATH)) {
+            if (AuthUtil.getCurrentAccountId(httpServletRequest) != null) {
+                return true;
+            } else {
+                httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + Constants.LOGIN);
+                return false;
+            }
+        } else {
+            return true;
+        }
     }
 
     @Override

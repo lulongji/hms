@@ -20,7 +20,7 @@
                     </li>
 
                     <li class="nav-item cta">
-                        <a class="nav-link" href="booknow.html"><span>马上预定</span></a>
+                        <a class="nav-link" href="booknow.html"><span>登陆 | 注册</span></a>
                     </li>
                 </ul>
 
