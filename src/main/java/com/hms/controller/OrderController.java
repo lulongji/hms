@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * 订单
+ * 订单处理
  */
 @RestController
 @RequestMapping("/order")

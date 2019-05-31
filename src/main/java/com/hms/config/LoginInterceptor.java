@@ -25,8 +25,8 @@ public class LoginInterceptor implements HandlerInterceptor {
             return false;
         }
         //过滤请求
-        if (httpServletRequest.getRequestURI().indexOf("/sdk/user/") != -1 ||
-                httpServletRequest.getRequestURI().indexOf("/evaluate/") != -1) {
+        if (httpServletRequest.getRequestURI().indexOf("/login/") != -1 ||
+                httpServletRequest.getRequestURI().indexOf("/user/") != -1) {
             return true;
         }
         return true;
