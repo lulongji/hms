@@ -1,22 +1,15 @@
 <#assign basepath=request.contextPath />
+<script>var ctx = "${basepath}";</script>
 <footer class="site-footer">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md-4">
                 <h3>联系电话</h3>
                 <p>24/7 小时.</p>
-                <p class="lead"><a href="tel://">+ 1 000 000 000</a></p>
             </div>
             <div class="col-md-4">
                 <h3>关于我们</h3>
                 <p>酒店行业领跑者。</p>
-                <p>
-                    <a href="#" class="pl-0 p-3"><span class="fa fa-facebook"></span></a>
-                    <a href="#" class="p-3"><span class="fa fa-twitter"></span></a>
-                    <a href="#" class="p-3"><span class="fa fa-instagram"></span></a>
-                    <a href="#" class="p-3"><span class="fa fa-vimeo"></span></a>
-                    <a href="#" class="p-3"><span class="fa fa-youtube-play"></span></a>
-                </p>
             </div>
             <div class="col-md-4">
                 <h3>加盟我们</h3>
@@ -56,3 +49,38 @@
 <script src="${basepath}/static/js/magnific-popup-options.js"></script>
 
 <script src="${basepath}/static/js/main.js"></script>
+<script>
+    ;$(function () {
+        var storage = window.sessionStorage;
+        var usernameVal = storage.getItem("username");
+        debugger
+        if (null == usernameVal || undefined == usernameVal || "" == usernameVal) {
+            $("#showorbu").show();
+            $("#showorbu2").hide();
+            $("#showorbu3").hide();
+        } else {
+            $("#showorbu").hide();
+            $("#showorbu2").show();
+            $("#showorbu3").show();
+            $("#usernamevalll").html(" 欢迎您:" + usernameVal)
+        }
+
+        $('#showorbu4').click(function () {
+            window.sessionStorage.removeItem("username");
+            debugger
+            $.ajax({
+                type: "post",
+                async: false, // 同步请求
+                url: ctx + "/login/logout",
+                data: {},
+                success: function (data) {
+                    top.location = ctx + "/hms/index";
+                },
+                error: function () {
+                    top.location = ctx + "/hms/index";
+                }
+            });
+        });
+
+    });
+</script>

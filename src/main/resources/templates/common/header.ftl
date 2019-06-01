@@ -10,17 +10,26 @@
             <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">首页</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link active" href="rooms.html">房间选择</a>
+                        <a class="nav-link active" href="/hms/index">首页</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">入驻留言</a>
+                        <a class="nav-link" href="rooms.html">房间选择</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rooms.html">我的订单</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/hms/contact">预定房间</a>
                     </li>
 
-                    <li class="nav-item cta">
-                        <a class="nav-link" href="booknow.html"><span>登陆 | 注册</span></a>
+                    <li class="nav-item cta" id="showorbu">
+                        <a class="nav-link" href="/login/"><span>登陆 | 注册</span></a>
+                    </li>
+                    <li class="nav-item active" id="showorbu2">
+                        <a class="nav-link"><span id="usernamevalll"></span></a>
+                    </li>
+                    <li class="nav-item cta" id="showorbu3">
+                        <a class="nav-link"><span id="showorbu4">退出</span></a>
                     </li>
                 </ul>
 

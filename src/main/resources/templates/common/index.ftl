@@ -4,7 +4,7 @@
         <div class="row align-items-center site-hero-inner justify-content-center">
             <div class="col-md-12 text-center">
                 <div class="mb-5 element-animate">
-                    <h1>欢迎入驻玮琪酒店。</h1>
+                    <h1>欢迎入驻玮琪酒店</h1>
                     <p>Welcome To Our WEIQI Rooms.</p>
                     <p><a href="booknow.html" class="btn btn-primary">马上预定</a></p>
                 </div>
@@ -62,7 +62,6 @@
                         <h3 class="mt-0"><a href="#">精选套房</a></h3>
                         <ul class="room-specs">
                             <li><span class="ion-ios-people-outline"></span> 120 评价</li>
-                            <li><span class="ion-ios-crop"></span> 22 ft <sup>2</sup></li>
                         </ul>
                         <p>这是我们为您准备的精选套房，希望给您一个满意舒适的入住环境，敬请期待您的入住，</p>
                         <p><a href="#" class="btn btn-primary btn-sm">马上预定</a></p>
@@ -76,11 +75,7 @@
                     <div class="overlap-text">
                   <span>
                     标准房间
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
                   </span>
-                        <span class="pricing-from">
                     费用 约$122
                   </span>
                     </div>
@@ -93,11 +88,7 @@
                     <div class="overlap-text">
                   <span>
                     大床房间
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
-                    <span class="ion-ios-star"></span>
                   </span>
-                        <span class="pricing-from">
                     费用 约$212
                   </span>
                     </div>

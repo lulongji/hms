@@ -11,19 +11,6 @@ import javax.servlet.http.HttpSession;
  * 用户公共类
  */
 public class AuthUtil {
-
-    /**
-     * 获取用户信息
-     *
-     * @param request
-     * @return
-     */
-    public static String getCurrentAccountId(HttpServletRequest request) throws Exception {
-        String token = AuthUtil.getToken(request);
-        String accountId = "";
-        return accountId;
-    }
-
     /**
      * 获取toke
      *
