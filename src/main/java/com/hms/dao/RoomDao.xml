@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hms.dao.RoomDao">
+
+    <select id="get" parameterType="Room" resultType="Room">
+        SELECT
+        *
+        FROM
+        t_room
+        <where>
+            <if test="null != roomno and '' != roomno">
+                AND roomno =#{roomno}
+            </if>
+            <if test="null != area and '' != area">
+                AND area =#{area}
+            </if>
+            <if test="null != breakfast and '' != breakfast">
+                AND breakfast =#{breakfast}
+            </if>
+            <if test="null != id and '' != id">
+                AND id =#{id}
+            </if>
+            <if test="price != id and '' != price">
+                AND id =#{price}
+            </if>
+            <if test="isflag != id and '' != isflag">
+                AND id =#{isflag}
+            </if>
+            <if test="leib != id and '' != leib">
+                AND id =#{leib}
+            </if>
+        </where>
+    </select>
+
+    <insert id="add" parameterType="Room">
+
+        INSERT INTO t_room
+        (
+        <trim prefix="" suffixOverrides=",">
+            id,
+            roomno,
+            area,
+            breakfast,
+            price,
+            isflag,
+            leib,
+            content,
+            nono,
+        </trim>
+        )values (
+        <trim prefix="" suffixOverrides=",">
+            #{id},
+            #{roomno},
+            #{area},
+            #{breakfast},
+            #{price},
+            #{isflag},
+            #{leib},
+            #{content},
+            #{nono},
+        </trim>
+        )
+    </insert>
+
+
+    <update id="update" parameterType="Room">
+        UPDATE t_room
+        <trim prefix="set" suffixOverrides=",">
+            <if test="null != roomno and '' != roomno">
+                nickname = #{roomno},
+            </if>
+            <if test="null != area and '' != area">
+                phone = #{area},
+            </if>
+            <if test="null != breakfast and '' != breakfast">
+                numcount = #{breakfast},
+            </if>
+            <if test="null != price and '' != price">
+                message = #{price},
+            </if>
+            <if test="null != leib and '' != leib">
+                leib = #{leib},
+            </if>
+            <if test="null != isflag and '' != isflag">
+                starttime = #{isflag},
+            </if>
+            <if test="null != endtime and '' != endtime">
+                endtime = #{endtime},
+            </if>
+            <if test="null != isflag and '' != isflag">
+                isflag = #{isflag},
+            </if>
+            <if test="null != content and '' != content">
+                content = #{content},
+            </if>
+        </trim>
+        WHERE
+        ID = #{id}
+    </update>
+
+    <delete id="delete" parameterType="Room">
+		DELETE FROM
+            t_room
+        WHERE
+		    ID = #{id}
+	</delete>
+
+
+    <select id="getRoomList" parameterType="Room" resultType="Room">
+        SELECT
+        *
+        FROM
+        t_room
+        <where>
+            <if test="null != isflag and '' != isflag">
+                AND isflag = #{isflag}
+            </if>
+        </where>
+
+    </select>
+
+</mapper>

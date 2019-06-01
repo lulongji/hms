@@ -18,10 +18,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="rooms.html">我的订单</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/hms/contact">预定房间</a>
-                    </li>
-
                     <li class="nav-item cta" id="showorbu">
                         <a class="nav-link" href="/login/"><span>登陆 | 注册</span></a>
                     </li>

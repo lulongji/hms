@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hms.dao.ReserveDao">
+
+    <select id="get" parameterType="Reserve" resultType="Reserve">
+        SELECT
+        *
+        FROM
+        t_reserve
+        <where>
+            <if test="null != username and '' != username">
+                AND username =#{username}
+            </if>
+            <if test="null != phone and '' != phone">
+                AND phone =#{phone}
+            </if>
+            <if test="null != nickname and '' != nickname">
+                AND nickname =#{nickname}
+            </if>
+            <if test="null != id and '' != id">
+                AND id =#{id}
+            </if>
+        </where>
+    </select>
+
+    <insert id="add" parameterType="Reserve">
+
+        INSERT INTO t_reserve
+        (
+        <trim prefix="" suffixOverrides=",">
+            id,
+            username,
+            nickname,
+            phone,
+            numcount,
+            message,
+            starttime,
+            endtime,
+            roomno,
+        </trim>
+        )values (
+        <trim prefix="" suffixOverrides=",">
+            #{id},
+            #{username},
+            #{nickname},
+            #{phone},
+            #{numcount},
+            #{message},
+            #{starttime},
+            #{endtime},
+            #{roomno},
+        </trim>
+        )
+    </insert>
+
+    <update id="update" parameterType="Reserve">
+        UPDATE t_reserve
+        <trim prefix="set" suffixOverrides=",">
+            <if test="null != nickname and '' != nickname">
+                nickname = #{nickname},
+            </if>
+            <if test="null != phone and '' != phone">
+                phone = #{phone},
+            </if>
+            <if test="null != numcount and '' != numcount">
+                numcount = #{numcount},
+            </if>
+            <if test="null != message and '' != message">
+                message = #{message},
+            </if>
+            <if test="null != starttime and '' != starttime">
+                starttime = #{starttime},
+            </if>
+            <if test="null != endtime and '' != endtime">
+                endtime = #{endtime},
+            </if>
+        </trim>
+        WHERE
+        ID = #{id}
+    </update>
+
+    <delete id="delete" parameterType="Reserve">
+		DELETE FROM
+            t_reserve
+        WHERE
+		    ID = #{id}
+	</delete>
+
+
+    <select id="getReserveList" parameterType="Reserve" resultType="Reserve">
+        SELECT
+        *
+        FROM
+        t_reserve
+    </select>
+
+</mapper>
