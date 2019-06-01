@@ -8,7 +8,7 @@ public interface Constants {
     /**
      * 登陆过滤 不对匹配该值的访问路径拦截（正则）
      */
-    String NO_INTERCEPTOR_PATH = ".*/((hms)|(login)|(logout)|(res)|(css)|(static)|(html)|(index)).*";
+    String NO_INTERCEPTOR_PATH = ".*/((hms)|(login)|(logout)|(res)|(css)|(static)|(html)|(index)|(admin)).*";
 
 
     /**

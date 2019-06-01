@@ -49,6 +49,7 @@
 <script src="${basepath}/static/js/magnific-popup-options.js"></script>
 
 <script src="${basepath}/static/js/main.js"></script>
+<script src="${basepath}/static/js/llj.js"></script>
 <script>
     ;$(function () {
         var storage = window.sessionStorage;
@@ -67,7 +68,6 @@
 
         $('#showorbu4').click(function () {
             window.sessionStorage.removeItem("username");
-            debugger
             $.ajax({
                 type: "post",
                 async: false, // 同步请求
@@ -82,5 +82,55 @@
             });
         });
 
-    });
+    })
+    ;
+
+
+    /**
+     * 删除
+     * @param roomno
+     */
+    function delOrderRoom(id) {
+        var token = window.sessionStorage.getItem("username");
+        if (null == token) {
+            myAlert("请您先登录！", function (f) {
+            }, false);
+            top.location = ctx + "/login/";
+        } else {
+            myAlert("确认要删除此订单吗？", function (f) {
+                if (f) {
+                    $.ajax({
+                        type: "post",
+                        async: false, // 同步请求
+                        url: ctx + "/order/delMyorder",
+                        data: {id: id},
+                        success: function (data) {
+                            if (data.code == "200") {
+                                myAlert("删除成功！", function (f) {
+                                }, false);
+                                top.location = ctx + "/order/myorder?username=" + token;
+                            } else {
+                                myAlert("删除失败！", function (f) {
+                                }, false);
+                            }
+                        },
+                        error: function () {
+                        }
+                    });
+                }
+            }, true);
+
+        }
+    }
+
+    function myorder() {
+        var token = window.sessionStorage.getItem("username");
+        if (null == token) {
+            myAlert("请您先登录！", function (f) {
+            }, false);
+            top.location = ctx + "/login/";
+        } else {
+            top.location = ctx + "/order/myorder?username=" + token
+        }
+    }
 </script>

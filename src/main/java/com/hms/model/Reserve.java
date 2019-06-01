@@ -14,6 +14,7 @@ public class Reserve {
     private String message;
     private String starttime;
     private String endtime;
+    private String roomno;
 
     @Override
     public String toString() {
@@ -26,6 +27,7 @@ public class Reserve {
                 ", message='" + message + '\'' +
                 ", starttime='" + starttime + '\'' +
                 ", endtime='" + endtime + '\'' +
+                ", roomno='" + roomno + '\'' +
                 '}';
     }
 }

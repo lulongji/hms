@@ -34,9 +34,14 @@ function login(dataFrom) {
         data: dataFrom,
         success: function (data) {
             if (data.code == "200") {
+                debugger
                 console.log(data.code + "-" + data.info);
                 window.sessionStorage.setItem("username", dataFrom.username);
-                top.location = ctx + "/hms/index";
+                if (dataFrom.username == 'admin') {
+                    top.location = ctx + "/admin/index";
+                } else {
+                    top.location = ctx + "/hms/index";
+                }
             } else {
                 myAlert("登陆失败，账号或密码错误！", function (f) {
                 }, false);

@@ -6,7 +6,7 @@
                 <div class="mb-5 element-animate">
                     <h1>欢迎入驻玮琪酒店</h1>
                     <p>Welcome To Our WEIQI Rooms.</p>
-                    <p><a href="booknow.html" class="btn btn-primary">马上预定</a></p>
+                    <p><a href="${basepath}/hms/rooms" class="btn btn-primary">马上预定</a></p>
                 </div>
 
             </div>
@@ -23,7 +23,7 @@
                     <h4 class="sub-heading">住我们豪华的房间</h4>
                     <h2 class="heading">保持和享受</h2>
                     <p class="mb-5"></p>
-                    <p><a href="#" class="btn btn-primary btn-sm">邀您入驻</a></p>
+                    <p><a href="${basepath}/hms/rooms" class="btn btn-primary btn-sm">邀您入驻</a></p>
                 </div>
             </div>
             <div class="col-md-1"></div>
@@ -64,7 +64,7 @@
                             <li><span class="ion-ios-people-outline"></span> 120 评价</li>
                         </ul>
                         <p>这是我们为您准备的精选套房，希望给您一个满意舒适的入住环境，敬请期待您的入住，</p>
-                        <p><a href="#" class="btn btn-primary btn-sm">马上预定</a></p>
+                        <p><a href="${basepath}/hms/rooms" class="btn btn-primary btn-sm">马上预定</a></p>
                     </div>
                 </div>
             </div>

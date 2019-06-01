@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
-import java.util.Random;
 
 /**
  * 酒店首页
@@ -40,10 +39,6 @@ public class HmsController {
     @RequestMapping(value = "/index", produces = "application/json; charset=utf-8")
     public ModelAndView index(HttpServletRequest request) {
         ModelAndView modelAndView = new ModelAndView("index");
-        String username = AuthUtil.getToken(request);
-        if (username != null && !"".equals(username)) {
-            modelAndView.addObject("username", username);
-        }
         return modelAndView;
     }
 
@@ -56,10 +51,6 @@ public class HmsController {
     @RequestMapping(value = "/rooms", produces = "application/json; charset=utf-8")
     public ModelAndView rooms(HttpServletRequest request) {
         ModelAndView modelAndView = new ModelAndView("rooms");
-        String username = AuthUtil.getToken(request);
-        if (username != null && !"".equals(username)) {
-            modelAndView.addObject("username", username);
-        }
         try {
             Room room = new Room();
             room.setIsflag("1");
@@ -78,9 +69,10 @@ public class HmsController {
      * @return
      */
     @RequestMapping("/contact")
-    public String contact() {
-        return "/contact";
+    public ModelAndView contact(String roomno) {
+        ModelAndView modelAndView = new ModelAndView("contact");
+        modelAndView.addObject("roomnoval", roomno);
+        return modelAndView;
     }
-
 
 }

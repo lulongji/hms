@@ -37,7 +37,6 @@
         INSERT INTO t_room
         (
         <trim prefix="" suffixOverrides=",">
-            id,
             roomno,
             area,
             breakfast,
@@ -49,7 +48,6 @@
         </trim>
         )values (
         <trim prefix="" suffixOverrides=",">
-            #{id},
             #{roomno},
             #{area},
             #{breakfast},

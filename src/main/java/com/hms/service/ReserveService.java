@@ -1,6 +1,7 @@
 package com.hms.service;
 
 
+import com.hms.model.OrderRoom;
 import com.hms.model.Reserve;
 
 import java.util.List;
@@ -52,5 +53,15 @@ public interface ReserveService {
      * @author Administrator
      */
     List<Reserve> getReserveList(Reserve reserve) throws Exception;
+
+    /**
+     * 我的订单
+     *
+     * @param orderRoom
+     * @return
+     * @throws Exception
+     */
+    List<OrderRoom> getOrderRoomList(OrderRoom orderRoom) throws Exception;
+
 
 }

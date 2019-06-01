@@ -28,7 +28,6 @@
         INSERT INTO t_reserve
         (
         <trim prefix="" suffixOverrides=",">
-            id,
             username,
             nickname,
             phone,
@@ -40,7 +39,6 @@
         </trim>
         )values (
         <trim prefix="" suffixOverrides=",">
-            #{id},
             #{username},
             #{nickname},
             #{phone},
@@ -92,6 +90,27 @@
         *
         FROM
         t_reserve
+        <where>
+            <if test="null != username and '' != username">
+                AND username = #{username}
+            </if>
+        </where>
+
+    </select>
+
+    <select id="getOrderRoomList" parameterType="OrderRoom" resultType="OrderRoom">
+        SELECT
+            *
+        FROM
+            (
+                SELECT
+                    *
+                FROM
+                    t_reserve
+                WHERE
+                    username = #{username}
+            ) A LEFT join t_room B ON A.roomno =B.roomno
+
     </select>
 
 </mapper>

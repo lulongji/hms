@@ -1,3 +1,6 @@
+<script>
+    var tokenName = window.sessionStorage.getItem("username");
+</script>
 <header role="banner">
     <nav class="navbar navbar-expand-md navbar-dark bg-light">
         <div class="container">
@@ -10,16 +13,16 @@
             <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
                 <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="/hms/index">首页</a>
+                        <a class="nav-link active" href="${basepath}/hms/index">首页</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="rooms.html">房间选择</a>
+                        <a class="nav-link" href="${basepath}/hms/rooms">房间选择</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="rooms.html">我的订单</a>
+                        <a class="nav-link" onclick="myorder()"> 我的订单</a>
                     </li>
                     <li class="nav-item cta" id="showorbu">
-                        <a class="nav-link" href="/login/"><span>登陆 | 注册</span></a>
+                        <a class="nav-link" href="${basepath}/login/"><span>登陆 | 注册</span></a>
                     </li>
                     <li class="nav-item active" id="showorbu2">
                         <a class="nav-link"><span id="usernamevalll"></span></a>

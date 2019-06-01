@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 
 /**
@@ -51,13 +52,13 @@ public class LoginController {
      */
     @RequestMapping("/loginVerify")
     @ResponseBody
-    public Result loginVerify(User user) {
-        Result result = Result.failure();
+    public Result loginVerify(HttpServletRequest request, User user) {
+        Result result = Result.success();
         try {
             User userVal = userService.get(user);
             if (null != userVal) {
-                cacheManager.putCache(Constants.userCache + userVal.getUsername(), userVal.getUsername(), 60 * 60 * 1000);
-                result = Result.success();
+                HttpSession session = request.getSession();
+                cacheManager.putCache(Constants.userCache + session.getId(), userVal.getUsername(), 60 * 60 * 1000);
             }
         } catch (Exception e) {
             result = Result.failure();

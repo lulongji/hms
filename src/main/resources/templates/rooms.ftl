@@ -30,7 +30,8 @@
                     <div class="col-md-4 mb-4">
                         <div class="media d-block room mb-0">
                             <figure>
-                                <img src="${basepath}/static/images/img_${item.nono}.jpg" alt="Generic placeholder image"
+                                <img src="${basepath}/static/images/img_${item.nono}.jpg"
+                                     alt="Generic placeholder image"
                                      class="img-fluid">
                                 <div class="overlap-text">
                                   <span>
@@ -41,7 +42,7 @@
                                 </div>
                             </figure>
                             <div class="media-body">
-                                <h3 class="mt-0"><a href="">点击预定</a></h3>
+                                <h3 class="mt-0"><a onclick="orderRoom('${item.roomno}')">点击预定</a></h3>
                                 <ul class="room-specs">
                                     <li>地址：${item.area}</li>
                                     <li>早餐：
@@ -52,7 +53,7 @@
                                 </ul>
 
                                 <p>${item.content}</p>
-                                <p><a href="#" class="btn btn-primary btn-sm">马上预定</a></p>
+                                <p><a onclick="orderRoom('${item.roomno}')" class="btn btn-primary btn-sm">马上预定</a></p>
                             </div>
                         </div>
                     </div>
@@ -69,5 +70,23 @@
 </section>
 
 <#include "./common/foot.ftl">
+<script>
+    /**
+     * 预定房间
+     * @param roomno
+     */
+    function orderRoom(roomno) {
+        var token = window.sessionStorage.getItem("username");
+        debugger;
+        if (null == token) {
+            myAlert("请您先登录！", function (f) {
+            }, false);
+            top.location = ctx + "/login/";
+        } else {
+            top.location = ctx + "/hms/contact?roomno=" + roomno;
+        }
+    }
+
+</script>
 </body>
 </html>
